@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useEntryStore } from '../../../hooks/useEntryStore';
-import { Entry } from './DisplaylastEntry';
+import { Entry } from './DisplayLastEntry';
 
 
 export const LastCreatedSection = () => {
