@@ -310,7 +310,7 @@ export const AllEntriesPage = () => {
           container
           sx={{
               display: 'flex',
-              justifyContent: {xs:'center', md:'space-between'},
+              justifyContent: {xs:'center', md: status == 'searching' ? 'center' : 'space-between'},
               maxWidth: 1400,
               boxShadow: 2,
               borderRadius: '10px',
