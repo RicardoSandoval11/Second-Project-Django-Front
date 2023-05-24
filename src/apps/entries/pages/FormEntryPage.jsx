@@ -17,9 +17,12 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import { useEntryStore } from '../../../hooks/useEntryStore';
+import { useNavigate } from 'react-router-dom';
 
 
 export const FormEntryPage = () => {
+
+    const navigate = useNavigate();
 
     const ITEM_HEIGHT = 48;
     const ITEM_PADDING_TOP = 8;
@@ -141,7 +144,7 @@ export const FormEntryPage = () => {
 
             startCreatingNewEntry(formData);
 
-            window.location.reload();
+            navigate('/');
 
         }else{
             Swal.fire('Empty Fields', 'All Fields Are Requiered','warning');

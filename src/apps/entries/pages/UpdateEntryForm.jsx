@@ -6,7 +6,7 @@ import { Grid, Typography, TextField, MenuItem, Button, Fab, Checkbox, Link } fr
 import { useCategoryStore } from '../../../hooks/useCategoryStore';
 import { useSelector } from 'react-redux';
 import { AddCircle } from '@mui/icons-material';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useEntryStore } from '../../../hooks/useEntryStore';
 import { Checking } from '../../../ui/Checking';
 import Swal from 'sweetalert2';
@@ -102,6 +102,8 @@ export const UpdateEntryForm = () => {
         setPublic(event.target.checked);
     };
 
+    const navigate = useNavigate();
+
     // Form submit
     const onUpdateEntry = () => {
         if(title != '' && summary != '' && category != null){
@@ -119,7 +121,7 @@ export const UpdateEntryForm = () => {
                 formData.append('image', image);
             }
             startUpdatingEntry(formData, entryToUpdate.id);
-            window.location.reload();
+            navigate('/');
         }else{
             Swal.fire('Empty Fields', 'Fields cannot be empty', 'warning');
         }
